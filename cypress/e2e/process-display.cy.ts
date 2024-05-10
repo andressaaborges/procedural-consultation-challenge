@@ -19,4 +19,15 @@ describe('process display', () => {
       'Número inválido! CNJ deve seguir o formato: 0000000-00.0000.0.00.0000',
     )
   })
+
+  it('should be able to display an message when the process number is not in the API', () => {
+    cy.searchByQuery('0000000-00.0000.0.00.0000')
+
+    cy.location('pathname').should(
+      'equal',
+      '/process/0000000-00.0000.0.00.0000',
+    )
+
+    cy.contains('Processo não encontrado!')
+  })
 })

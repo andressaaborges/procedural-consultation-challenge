@@ -32,6 +32,14 @@ jobs:
             key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
             restore-keys: |
               ${{ runner.os }}-pnpm-store-
+
+      - uses: actions/cache@v4
+        name: Cache Cypress
+        with:
+            path: ~/.cache/Cypress
+            key: ${{ runner.os }}-cypress-${{ hashFiles('**/cypress.json') }}
+            restore-keys: |
+              ${{ runner.os }}-cypress-
   
       - name: Install dependencies
         run: pnpm install

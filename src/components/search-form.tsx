@@ -34,7 +34,7 @@ export function SearchForm() {
     <div className="flex flex-col items-center justify-items-center gap-10">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex w-[320px] items-center gap-3 rounded-full bg-zinc-900 px-5 py-3 ring-zinc-700"
+        className="flex w-[420px] items-center gap-3 rounded-full bg-zinc-900 px-5 py-3 ring-zinc-700 focus-within:outline-1 focus-within:ring focus-within:ring-sky-600"
       >
         <Search className="w-6 h-5 text-zinc-500" />
 
@@ -46,10 +46,15 @@ export function SearchForm() {
           required
         />
 
-        <button type="submit">Buscar</button>
+        <button
+          type="submit"
+          className="bg-sky-600 hover:bg-sky-700 active:bg-sky-500 focus:outline-none focus:ring focus:ring-sky-500 px-5 py-1 rounded-full font-semibold"
+        >
+          Buscar
+        </button>
       </form>
 
-      <p>
+      <p className="text-lg text-white font-semibold">
         {errors.cnj
           ? errors.cnj.message
           : 'Digite o número CNJ do processo com números, hífen e pontos para realizar a busca!'}

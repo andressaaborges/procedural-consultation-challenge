@@ -250,7 +250,7 @@ export function TribunalSelect() {
 }
 ```
 
-- **Rota de Search na API:*** Criação de uma rota na API para busca de processos com base em uma query fornecida no formulário de busca. Utilizaria searchParams, ao invés de params na comunicação. 
+- **Rota de Search na API:** Criação de uma rota na API para busca de processos com base em uma query fornecida no formulário de busca. Utilizaria searchParams, ao invés de params na comunicação. 
   
 - **Rota de Tribunais:** Criação de uma rota na API que retorna somente os tribunais, para utilizar na lógica de buscar pelo filtro de Tribunal. 
 
@@ -272,23 +272,21 @@ export function TribunalSelect() {
 > ##### GET /api/cases/[cnj]
 
 - **Acesse**: https://procedural-consultation-challenge-api.vercel.app/api/cases/5001682-88.2020.8.13.0672
-- **Descrição**: Recupera detalhes de um caso específico.
+- **Descrição**: Recupera todas as informações de um caso específico.
 - **Método**: GET
 - **Parâmetros**: 
-  - `cnj`: Número CNJ do caso.
+  - `cnj`: (Dinâmico) Número CNJ do caso.
 - **Resposta**: 
   - `200 OK`: Detalhes do caso.
-  - `404 Not Found`: Caso não
-
- encontrado.
+  - `404 Not Found`: Caso não encontrado.
 
 > ##### GET /api/cases/tribunal/[court]
 
 - **Acesse**: https://procedural-consultation-challenge-api.vercel.app/api/cases/tribunal/TJSP
-- **Descrição**: Recupera detalhes de um caso específico.
+- **Descrição**: Recupera todos casos do tribunal selecionado.
 - **Método**: GET
 - **Parâmetros**: 
-  - `court`:  (Dinâmico) Filtra casos por tribunal.
+  - `court`: (Dinâmico) Filtra casos por tribunal.
 - **Resposta**: 
   - `200 OK`: Detalhes do caso.
   - `404 Not Found`: Caso não encontrado.

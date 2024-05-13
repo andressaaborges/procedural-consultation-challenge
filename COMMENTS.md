@@ -136,17 +136,17 @@ Além disso, fiz o deploy da API na plataforma Vercel, deixando a API online e f
 
 - **Filtro de Busca por Tribunal:** 
     - **Objetivo:** Implementar a funcionalidade de busca por tribunal, permitindo que os usuários filtrem os processos com base no tribunal selecionado.
-    - **Lógica Planejada:**
+      - **Lógica Planejada:**
         Eu criei uma rota na API que retorna todos os casos de um tribunal específico, sem validação, com base em um parâmetro fornecido.
         No frontend, quero fazer uma requisição para obter todos os casos e extrair os tribunais únicos cadastrados.
         Utilizar os tribunais únicos para preencher as opções de um componente de seleção (select).
         Quando o usuário selecionar um tribunal, fazer uma nova requisição para buscar os processos desse tribunal e exibi-los na página com o nº CNJ e alguns detalhes.
         Ao clicar em um dos processos exibidos, ser redirecionado para a página do processo com todas as informações. 
-    - **Implementação Planejada:**
+      - **Implementação Planejada:**
         Utilizar `Zustand` ou `Context API` para gerenciar o estado relacionado aos tribunais e aos processos filtrados.
         Criar componentes para exibir a lista de tribunais e permitir a seleção de um tribunal.
         Atualizar a exibição dos processos conforme o tribunal selecionado pelo usuário.
-    - **Observações:**
+      - **Observações:**
         Foram feitas tentativas de implementação usando Zustand e Context Provider para gerenciar o estado entre os componentes, porém ocorreram erros que demandaram tempo para solucionar.
         Segue um rascunho de código que foi desenvolvido para criar essa funcionalidade, porém não foi totalmente integrado devido aos problemas encontrados durante o desenvolvimento.
 
@@ -418,9 +418,8 @@ O repositório backend se encontra neste link: [Repositório Backend](https://gi
 A API está deployada na plataforma Vercel e pode ser acessada através do seguinte link: [Procedural Consultation Challenge API](https://procedural-consultation-challenge-api.vercel.app).
 
 
->
 
-###
+#
 
 <p><strong>Andressa Borges</strong> - Software Developer
 <br/>www.linkedin.com/in/andressaaborges</p>

@@ -134,7 +134,7 @@ Além disso, fiz o deploy da API na plataforma Vercel, deixando a API online e f
     - **Observações:**
         Houve uma tentativa de implementação desses ajustes, porém, enfrentei erros inesperados que demandaram tempo considerável para solucionar. Optei por remover temporariamente essa implementação para evitar atrasos no projeto, levando em conta que será testado em ambiente dev.
 
-  - **Filtro de Busca por Tribunal:** 
+- **Filtro de Busca por Tribunal:** 
     - **Objetivo:** Implementar a funcionalidade de busca por tribunal, permitindo que os usuários filtrem os processos com base no tribunal selecionado.
     - **Lógica Planejada:**
         Eu criei uma rota na API que retorna todos os casos de um tribunal específico, sem validação, com base em um parâmetro fornecido.
@@ -250,11 +250,11 @@ export function TribunalSelect() {
 }
 ```
 
-  - **Rota de Search na API:*** Criação de uma rota na API para busca de processos com base em uma query fornecida no formulário de busca. Utilizaria searchParams, ao invés de params na comunicação. 
+- **Rota de Search na API:*** Criação de uma rota na API para busca de processos com base em uma query fornecida no formulário de busca. Utilizaria searchParams, ao invés de params na comunicação. 
   
-  - **Rota de Tribunais:** Criação de uma rota na API que retorna somente os tribunais, para utilizar na lógica de buscar pelo filtro de Tribunal. 
+- **Rota de Tribunais:** Criação de uma rota na API que retorna somente os tribunais, para utilizar na lógica de buscar pelo filtro de Tribunal. 
 
-  - **Mais cobertura de testes na API e Frontend.** 
+- **Mais cobertura de testes na API e Frontend.** 
 
 #
 

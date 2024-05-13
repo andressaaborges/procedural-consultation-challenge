@@ -97,9 +97,9 @@ Para isso, desenvolvi um componente chamado `skeleton`.
 
 - **Criação da Página de Exibição de Processo**: Desenvolvimento da página de exibição de processo (process-display) para exibir os detalhes de um processo específico.
   
-- **Criação de Rota na API**: Criei uma rota na API para buscar detalhes de um único processo com base no número CNJ. Implementei um handler para essa rota, onde validei se o parâmetro CNJ é uma string e no formato desejado.  `generateMetadata` para retornar parâmetros específicos para cada página de processo com o número CNJ.
+- **Criação de Rota na API**: Criei uma rota na API para buscar detalhes de um único processo com base no número CNJ. Implementei um handler para essa rota, onde validei se o parâmetro CNJ é uma string e no formato desejado.
 
-Na página de exibição de processo no Front, utilizei a função generateMetadata para retornar parâmetros específicos para cada página de processo com base no número CNJ. Além de ser uma prática que melhora o SEO, ajuda o usuário a se localizar com as abas abertas.
+Na página de exibição de processo no Front, utilizei a função `generateMetadata` para retornar parâmetros específicos para cada página de processo com base no número CNJ. Além de ser uma prática que melhora o SEO, ajuda o usuário a se localizar com as abas abertas.
 
 #### 8: Implementação da Página de Busca
 

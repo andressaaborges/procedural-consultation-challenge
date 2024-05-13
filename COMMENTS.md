@@ -1,20 +1,28 @@
-# Documentação do Desafio: Consulta Processual
+<h1 align="center"> Documentação do Desafio: Consulta Processual
 
-## Introdução
+<br/>
+
+###
+
+### 🔹 Introdução
 
 Este é o repositório do projeto Consulta Processual, um desafio técnico desenvolvido para medir habilidades em desenvolvimento fullstack. O objetivo principal é criar um sistema de consulta processual que permita aos usuários pesquisar processos com base em seu número unificado (CNJ) e visualizar os detalhes de cada processo encontrado.
 
-## Descrição do Projeto
+#
+
+### 🔹 Descrição do Projeto
 
 O projeto consiste em duas páginas principais:
 
 1. Uma página de consulta processual (busca);
    - Pode ser acessada via http://localhost:3000/
 2. Uma página de processos (exibição).
-   - Pode ser acessada via http://localhost:3000/process/[inserir-cnj-do processo]
+   - Pode ser acessada via http://localhost:3000/process/[inserir-cnj-do-processo]
    - Link de exemplo: http://localhost:3000/process/8500235-12.2019.4.05.8000
 
-## Tecnologias Utilizadas:
+#
+
+### 🔹 Tecnologias Utilizadas:
 
 - **Node.js**
 - **ReactJS**
@@ -28,9 +36,11 @@ O projeto consiste em duas páginas principais:
 
 A aplicação foi desenvolvida utilizando Next.js no frontend e uma API no backend também em Next.js/Node.
 
-## Etapas do Projeto
+#
 
-### 1. Análise e Planejamento
+### 🔹 Etapas do Projeto
+
+#### 1. Análise e Planejamento
 
 - **Leitura e Análise da Descrição do Desafio:**
 Inicialmente, li cuidadosamente a descrição do desafio, analisando as necessidades e requisitos estabelecidos. 
@@ -41,7 +51,8 @@ Com base nas informações fornecidas no desafio, fiz um rascunho do layout da a
 - **Considerações sobre Tempo, Qualidade e Escalabilidade:**
 Levei em consideração o tempo para a conclusão do projeto, bem como a qualidade de código, escalabilidade e manutenibilidade. Esses aspectos foram fundamentais para guiar minhas decisões durante o desenvolvimento.
 
-### 2. Configuração do Projeto e Setup Inicial
+
+#### 2. Configuração do Projeto e Setup Inicial
 
 - **Framework Utilizado**: Next.js
 Optei por utilizar o Next.js com Server Components devido à sua robustez e capacidade de renderização no servidor. Esta escolha foi motivada pela necessidade de criar funcionalidades como busca, página de processo e busca por tribunal. O Next.js Pages Router foi selecionado como o mecanismo de roteamento, pois simplifica a organização das rotas da aplicação.
@@ -52,7 +63,7 @@ E além disso, o Next.js é recomendado pelo React desde 2023 na documentação 
 
 - **Configuração de Dependências**: Instalei as dependências necessárias para o projeto, e configurei o ambiente de desenvolvimento para garantir qualidade e consistência no código, como o ESLint, seguindo as boas práticas de desenvolvimento.
 
-### 3: Criação do Layout Base da Aplicação
+#### 3: Criação do Layout Base da Aplicação
 
 - **Organização**: Iniciei o desenvolvimento criando um layout base para a aplicação. O layout foi projetado de forma a ser aplicado em todas as páginas, mantendo uma consistência visual em toda a aplicação.
 
@@ -64,25 +75,25 @@ Utilizei também componentes reutilizáveis para criar o layout base, como o Hea
 
 Verifiquei a responsividade do layout em diferentes dispositivos e resoluções de tela, entretanto não fiz ajustes mais refinados porque no objetivos da descrição da aplicação não inclui ser testado em mobile.
 
-### 4: Definição da Arquitetura do Projeto
+#### 4: Definição da Arquitetura do Projeto
 
 - **Arquitetura de Microsservices**: Optei por adotar a arquitetura de projeto dividida em dois repositórios separados: um para o backend e outro para o frontend. Essa abordagem facilita a manutenção, o desenvolvimento e a escalabilidade do projeto, pois permite que cada parte seja gerenciada de forma independente.
 
 - **Padrão BFF (Backend for Frontend)**: Aproveitei o conceito de BFF oferecido pelo Next.js, que permite a criação de um backend dedicado para atender especificamente às necessidades do frontend. Isso possibilita uma separação clara de responsabilidades entre o frontend e o backend, garantindo maior flexibilidade e modularidade no desenvolvimento.
 
-### 5: Integração com a API e Manipulação de Dados
+#### 5: Integração com a API e Manipulação de Dados
 
 - **Utilização da Fetch API e Variáveis de Ambiente**: Em vez de usar o Axios, utilizei a Fetch API do navegador, que é estendida pelo Next.js para adicionar funcionalidades como caching. Criei um arquivo `api.ts` para definir uma função que executa a Fetch API com base em uma URL de base e uma URL específica. Também configurei variáveis de ambiente para armazenar a URL de base da API. Utilizei o `Zod` para validar e transformar as variáveis de ambiente. Por fim, importei as variáveis de ambiente para usar a função api para carregar os dados na rota. 
 
 - **Uso do Cache para Evitar Requisições Duplicadas:**: Utilizei as propriedades de controle de cache do Next.js para evitar requisições duplicadas. O Next.js oferece opções como `force-cache`, que permite cachear uma requisição, `no-store`, que impede o cache, e `revalidate`, que define um tempo em segundos para atualizar o cache da requisição. Optei por utilizar o revalidate com um tempo para garantir a atualização periódica dos dados em cache.
 
-### 6: Adição de Componentes de Carregamento
+#### 6: Adição de Componentes de Carregamento
 
 - **Criação da Página de Carregamento `loading`**: Desenvolvi uma página de carregamento (loading) para a aplicação. Essa página é essencial para proporcionar uma experiência mais agradável ao usuário durante o carregamento de conteúdo assíncrono, as requisições HTTP. A presença da página de carregamento ajuda a indicar visualmente que a aplicação está em processo de carregamento e que o usuário deve aguardar.
 
 Para isso, desenvolvi um componente chamado `skeleton`. 
 
-### 7: Implementação da Página de Exibição de Processo
+#### 7: Implementação da Página de Exibição de Processo
 
 - **Criação da Página de Exibição de Processo**: Desenvolvimento da página de exibição de processo (process-display) para exibir os detalhes de um processo específico.
   
@@ -90,7 +101,7 @@ Para isso, desenvolvi um componente chamado `skeleton`.
 
 Na página de exibição de processo no Front, utilizei a função generateMetadata para retornar parâmetros específicos para cada página de processo com base no número CNJ. Além de ser uma prática que melhora o SEO, ajuda o usuário a se localizar com as abas abertas.
 
-### 8: Implementação da Página de Busca
+#### 8: Implementação da Página de Busca
 
 - **Criação da Página de Busca**: Desenvolvi a página de busca na aplicação, que permite aos usuários buscar processos com base no número CNJ. Essa página contém um formulário de busca, onde os usuários podem inserir o número CNJ e pressionar Enter ou no botão para realizar a busca. 
   
@@ -98,19 +109,21 @@ Implementei também no front uma validação para garantir que a busca só seja 
 
 Quando o número CNJ está no formato correto, realizo uma requisição à API para buscar os dados do processo correspondente. Se o processo existir, retorno os dados para a página de exibição do processo. Caso contrário, exibo uma mensagem informando que o processo não foi encontrado.
 
-### 9: Adição de Testes End-to-End
+#### 9: Adição de Testes End-to-End
 
 - **Testes End-to-End com Cypress**: Optei somente pelos testes end-to-end por conta do tempo. Considero efeciente porque é capaz de simular a navegação de um usuário na aplicação, testando a interface e as ações que um usuário comum faria, garantindo que o comportamento da aplicação se mantenha conforme novas features são adicionadas.
   
 Não implementei os testes unitários utilizando o próprio Cypress porque, pra mim, essa ferramenta não tem ainda uma documentação muito clara e muito atualizada de usar o Cypress junto a estrutura de código que estou utilizando.
 
-### 10: Configuração do Workflow de CI
+#### 10: Configuração do Workflow de CI
 
 - **Configuração do GitHub Actions e Deploy da API:** Configurei um workflow no GitHub Actions para rodar os testes a cada novo commit e contribuir para a garantia da qualidade e estabilidade da aplicação, permitindo a detecção precoce de problemas e a entrega contínua de novas funcionalidades.
 
 Além disso, fiz o deploy da API na plataforma Vercel, deixando a API online e facilitando a execução dos testes e2e usando cypress.
 
-### Próximos Passos
+#
+
+### 🔹 Próximos Passos
 
 #### O que eu implementaria caso tivesse mais tempo:
 
@@ -243,10 +256,11 @@ export function TribunalSelect() {
 
   - **Mais cobertura de testes na API e Frontend.** 
 
+#
 
-### Endpoints da API
+### 🔹 Endpoints da API
 
-##### GET /api/cases
+> ##### GET /api/cases
 
 - **Acesse**: https://procedural-consultation-challenge-api.vercel.app/api/cases
 - **Descrição**: Recupera uma lista de casos.
@@ -255,7 +269,7 @@ export function TribunalSelect() {
   - `200 OK`: Lista de casos.
   - `404 Not Found`: Caso não encontrado.
 
-##### GET /api/cases/[cnj]
+> ##### GET /api/cases/[cnj]
 
 - **Acesse**: https://procedural-consultation-challenge-api.vercel.app/api/cases/5001682-88.2020.8.13.0672
 - **Descrição**: Recupera detalhes de um caso específico.
@@ -268,7 +282,7 @@ export function TribunalSelect() {
 
  encontrado.
 
-##### GET /api/cases/tribunal/[court]
+> ##### GET /api/cases/tribunal/[court]
 
 - **Acesse**: https://procedural-consultation-challenge-api.vercel.app/api/cases/tribunal/TJSP
 - **Descrição**: Recupera detalhes de um caso específico.
@@ -279,8 +293,9 @@ export function TribunalSelect() {
   - `200 OK`: Detalhes do caso.
   - `404 Not Found`: Caso não encontrado.
 
+#
 
-### Testes E2E Implementados
+### 🔹 Testes E2E Implementados
 
 #### 1. Teste: Exibir dados de um processo existente
 
@@ -309,8 +324,9 @@ export function TribunalSelect() {
   3. Verifica se a mensagem de `processo não encontrado` é exibida corretamente na página.
 - **Resultado Esperado**: A página deve exibir uma mensagem indicando que o processo não foi encontrado na API.
 
+#
 
-### Como Executar o Projeto Frontend
+### 🔹 Como Executar o Projeto Frontend
 
 Considerando que tem o Node.js instalado conforme descrito, siga os passos:
 
@@ -336,9 +352,10 @@ npm run dev
 ```
 
 4. Abra seu navegador e acesse http://localhost:3000.
-   
 
-### Como Executar a API
+# 
+
+### 🔹 Como Executar a API
 
 > **A API está deployada, então para realizar os testar da aplicação só necessita rodar o servidor do Frontend**
 
@@ -367,12 +384,13 @@ npm run dev
    
 Caso já tenha um servidor rodando, irá abrir em http://localhost:3001.
 
+#
 
-### Como Rodar os Testes em Cypress
+### 🔹 Como Rodar os Testes em Cypress
 
 > **O servidor frontend precisa estar rodando**
 
-- Na raiz do diretório frontend, execute:
+1.  Na raiz do diretório frontend, execute:
 
 ```bash
 npm cypress install
@@ -380,24 +398,31 @@ npm cypress open
 
 ```
 
+2. Irá abrir uma janela do Cypress. Espere, por gentileza, terminar de carregar;
+3. Depois de carregar a janela, selecione a opção `E2E Testing`;
+4. Depois, selecione a opção `Chrome` e clique em `Start E2E Testing in Chrome`;
+5. Irá abrir uma janela no `Chrome`, selecione `process-display.cy.ts`
+6. Os testes serão carregados;
+7. **Atenção!** Os testes podem falhar na 1ª ou 2ª tentativa devido o tempo de execução, por isso sempre rode o teste mais de uma vez. Não significa que há erros nos testes.
 
-- Irá abrir uma janela do Cypress. Espere, por gentileza, terminar de carregar;
-- Depois de carregar a janela, selecione a opção `E2E Testing`;
-- Depois, selecione a opção `Chrome` e clique em `Start E2E Testing in Chrome`;
-- Irá abrir uma janela no `Chrome`, selecione `process-display.cy.ts`
-- Os testes serão carregados;
-- **Atenção!** Os testes podem falhar na 1ª ou 2ª tentativa devido o tempo de execução, por isso sempre rode o teste mais de uma vez. Não significa que há erros nos testes.
+#
 
-### Como Rodar a Pipeline CI no GitHub Actions
+### 🔹 Como Rodar a Pipeline CI no GitHub Actions
 
 A pipeline CI é acionada automaticamente a cada novo commit no repositório do projeto frontend. Os testes são executados automaticamente durante a pipeline CI.
 
-### Link da API 
+#
+
+### 🔹 Link da API 
 
 O repositório backend se encontra neste link: [Repositório Backend](https://github.com/andressaaborges/procedural-consultation-challenge-api).
 
 A API está deployada na plataforma Vercel e pode ser acessada através do seguinte link: [Procedural Consultation Challenge API](https://procedural-consultation-challenge-api.vercel.app).
 
----
 
-**Andressa Borges** - Software Developer
+>
+
+###
+
+<p><strong>Andressa Borges</strong> - Software Developer
+<br/>www.linkedin.com/in/andressaaborges</p>

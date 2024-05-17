@@ -342,14 +342,16 @@ npm install
 
 ```
 
-3. Inicie o servidor de desenvolvimento:
+3. Crie uma cópia do arquivo `.env.sample` na raiz do projeto e renomeie para `.env.local`;
+
+4. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
 
 ```
 
-4. Abra seu navegador e acesse http://localhost:3000.
+5. Abra seu navegador e acesse http://localhost:3000.
 
 # 
 
